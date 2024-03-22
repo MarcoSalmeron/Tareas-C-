@@ -10,11 +10,13 @@ int main(int argc, char *argv[]) {
 	
 	//Ciclo del 1 al 10
 	do {
-		printf ("%d ",v);
-		s=s+v;
+		printf ("%d\n\n",v);
+	
 		v++;
 		//sumar cuantos pares hay en el ciclo
 		if (v % 2 ==0){
+	printf ("Este valor se usara para el promedio");
+			s=s+v;
 			n++;
 		}
 	} while(v<=10);
