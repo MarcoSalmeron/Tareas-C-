@@ -5,10 +5,12 @@ int main(int argc, char *argv[]) {
 	//1-Retirar dinero 2-Abonar dinero 3-Salir
 	//Mostrar dinero
 	
-	int opc,Dinero,Retiro,Abono;
+	int opc,Dinero,Retiro,Abono,movimientos;
 	Dinero=3000;
+	movimientos=0;
 	do {
-		printf("\n**MENU**\n");
+		printf("\n\n**MENU**\n");
+		printf("Numero de movimientos = %d\n", movimientos);
 		printf("Saldo actual = %d\n\n", Dinero);
 		printf("1-Retirar Dinero\n");
 		printf("2-Depositar\n");
@@ -19,15 +21,22 @@ int main(int argc, char *argv[]) {
 	case 1:
 		printf("¿Cuanto dinero deseas retirar?\n");
 		scanf("%d", &Retiro);
+		if (Retiro>Dinero){
+			printf("\nSaldo Insuficiente");
+			movimientos--;
+			Dinero=Dinero+Retiro;
+		}
 		Dinero=Dinero-Retiro;
-		system("cls");
+		movimientos++;
+		//system("cls");
 		break;
 		
 	case 2:
 		printf("¿Cuanto deseas Depositar?\n");
 		scanf("%d", &Abono);
 		Dinero=Dinero+Abono;
-		system("cls");
+		movimientos++;
+		//system("cls");
 		break;
 		
 	case 3:
